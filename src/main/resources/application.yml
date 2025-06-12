@@ -1,6 +1,8 @@
 spring:
   application:
-  name: knowyou-ai-agent
+    name: knowyou-ai-agent
+  profiles:
+    active: local
   ai:
     dashscope:
       api-key: 'sk-b793b70b9b4a428fa089f82368669fb1'
@@ -31,3 +33,7 @@ knife4j:
 model:
   config:
     api-key: 'sk-b793b70b9b4a428fa089f82368669fb1'
+# 修改日志级别，查看 Spring AI 更多调用细节
+logging:
+  level:
+    org.springframework.ai: debug

@@ -2,6 +2,7 @@ package com.knowyou.knowyouaiagent.demo.invoke;
 
 import jakarta.annotation.Resource;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.client.advisor.api.Advisor;
 import org.springframework.ai.chat.messages.AssistantMessage;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.prompt.Prompt;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
  * @Description: Spring AI 框架调用 AI 大模型（阿里）
  * 取消Componenet注释后，项目启动会自动执行run方法
  */
-@Component
+//@Component
 public class SpringAiAiInvoke implements CommandLineRunner {
     @Resource
     private ChatModel dashscopeChatModel;
@@ -21,12 +22,13 @@ public class SpringAiAiInvoke implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 //        基础用法ChatModel
-        AssistantMessage assistantMessage = dashscopeChatModel.call(new Prompt("你好,我是诺优"))
-                .getResult()
-                .getOutput();
+//        AssistantMessage assistantMessage = dashscopeChatModel.call(new Prompt("你好,我是诺优"))
+//                .getResult()
+//                .getOutput();
 //
 //        System.out.println(assistantMessage.getText());
 //
+
 //        高级用法ChatClient
         ChatClient chatClient = ChatClient.builder(dashscopeChatModel)
                 .defaultSystem("你是卫星互联网接入网领域专家")

@@ -5,8 +5,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = "model.config")
+@ConfigurationProperties(modelConfig.CONFIG_PREFIX)
 public class modelConfig {
+    public static final String CONFIG_PREFIX = "model.config";
     private String apiKey;
 
     public String getApiKey() {
